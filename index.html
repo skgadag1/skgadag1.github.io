@@ -90,11 +90,13 @@
       margin: 0;
     }
 
+    
     li {
-      position: relative;
       display: flex;
-      flex-direction: column;
-      gap: 8px;
+      flex-direction: row; /* Always row */
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
       background: white;
       border-radius: 8px;
       padding: 16px;
@@ -102,7 +104,9 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       border-left: 6px solid var(--info);
       transition: transform .2s, box-shadow .2s;
+      flex-wrap: nowrap; /* Prevent wrapping */
     }
+
 
     li:hover {
       transform: translateY(-2px);
@@ -203,7 +207,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>📝 Sangamesh To-Do</h1>
+    <h2>📝 Sangamesh's To-Do</h2>
 
     <form id="taskForm">
       <input type="text" id="txt" placeholder="What’s next?" required>
